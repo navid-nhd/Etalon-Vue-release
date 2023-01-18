@@ -1,6 +1,7 @@
 
 
 <template>
+  <RouterView></RouterView>
   <section class="intro relative">           
     <Header></Header>
     <Banner></Banner>      
