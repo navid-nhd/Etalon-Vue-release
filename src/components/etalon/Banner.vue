@@ -1,5 +1,5 @@
 <template>
-    <section class="banner">
+    <section class="banner px-8 lg:px-0">
             <div class="container mx-auto">
                 <div class="flex">
                     <div class="w-full lg:w-1/2 relative z-40 text-white">
@@ -25,19 +25,19 @@
                             <div class="arrow-holder hidden lg:flex flex-row  flex-nowrap absolute gap-2">
                                 <div class="right-arrow">
                                         <router-link to="/" title="next">
-                                            <img src="src/image/arrow-small-left.svg" alt="arrow" class="d-block">
+                                            <img src="src/image/arrow-small-left.svg" alt="arrow" class="block">
                                         </router-link>
                                 </div>
                                 <div class="left-arrow">
                                     <router-link to="/" title="next">
-                                        <img src="src/image/arrow-small-left.svg" alt="arrow" class="d-block">
+                                        <img src="src/image/arrow-small-left.svg" alt="arrow" class="block">
                                     </router-link>
                                 </div>
                             </div>
                             <div class="price-holder hidden lg:block text-white text-center absolute">
                                 <div class="text-4xl font-medium">$299</div>
                             </div>
-                              <div class="gallery-pointer-holder flex absolute m-2">
+                            <div class="gallery-pointer-holder flex gap-4 lg:gap-1 absolute m-2">
                                 <div v-for="item in 3" class="gallery-pointer rounded-full">
                                     <router-link to="/"></router-link>
                                 </div>
@@ -54,7 +54,9 @@
 
         },
         data(){
-
+            return{
+                
+            }
         },
         methods:{
 
@@ -62,6 +64,26 @@
     }
 </script>
 <style scoped>
+  .banner-image-holder::after ,
+.banner-image-holder::before {
+    content: '';
+    background-color: var(--etalon-green-dark);
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+}
+.banner-image-holder::after {
+    width: 192px;
+    height: 190px;
+    bottom: 149px;
+    left: 64px;
+}
+.banner-image-holder::before {
+    width: 198px;
+    height: 198px;
+    bottom: 82px;
+    right: 58px;
+} 
 .banner-title {
     line-height: 50px;
 }

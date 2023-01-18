@@ -1,5 +1,5 @@
 <template>
-    <section id="new-collection">
+    <section id="new-collection" class="px-8 lg:px-0">
       <main class="container mx-auto">
           <h2 class="section-title py-8">
               New Collection
@@ -14,7 +14,7 @@
                           <img class="left-showcase-picture block absolute bottom-0 left-1/2" src="src/image/2.png" alt="Jacket" >
                       </div>
                       <div class="left-showcase-btn absolute cursor-pointer">
-                          <route-link to="/" class="btn inline-block text-white bg-zinc-900 hover:bg-zinc-700">Discover Now</route-link>
+                          <router-link to="/" class="btn inline-block text-white bg-zinc-900 hover:bg-zinc-700">Discover Now</router-link>
                       </div>
                   </div>
               </div>

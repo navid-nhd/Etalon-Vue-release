@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="shoe-holder d-none d-md-block">
+            <div class="shoe-holder hidden md:block">
                 <div class="shoe-off">70% OFF</div>
                 <div class="shoe-picture">
                     <img src="src/image/4.png" alt="shoe">

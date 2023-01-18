@@ -1,6 +1,6 @@
 <template>
     
-    <header class="">
+    <header class="top-0">
         <div class="container mx-auto">
             <div class="hidden md:flex justify-between pt-6 items-center relative text-white z-50">
                 <div class="font-black text-4xl">
@@ -15,8 +15,11 @@
                     </router-link>
                 </div>
                 <div class="nav-shopping-cart flex justify-center items-center w-10 h-10 rounded-full bg-amber-300 hover:bg-amber-100">
-                    <router-link to="#" class="nav-shopping-cart-icon" title="Go to Shopping Cart" target="_blank">
-                            <img class="top-header-image" src="@/image/shopping-cart-logo.svg" alt="cart">
+                    <router-link to="#" class="nav-shopping-cart-icon realtive" title="Go to Shopping Cart" target="_blank">
+                        <img class="top-header-image" src="@/image/shopping-cart-logo.svg" alt="cart">
+                        <span class="shopping-cart-indicator absolute text-white bg-red-700 rounded-full font-black text-sm flex justify-center items-center">
+                            {{ counterStore.count }}
+                        </span>
                     </router-link>
                 </div>
             </div>
@@ -38,7 +41,12 @@
     </header>
 </template>
 <script>
+import { mapStores } from 'pinia'
+import { useCounterStore } from '@/stores/counter.js';
     export default{
+        computed:{
+            ...mapStores(useCounterStore)
+        },
         components:{
 
         },
@@ -78,5 +86,18 @@
     }
 </script>
 <style scoped>
+.shopping-cart-indicator{
+    top: 25px;
+    right:-15px;
+    width: 25px;
+    height: 25px;
+}
+.mobile-nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
 
 </style>

@@ -1,7 +1,7 @@
 <template>
     <section class="bg-zinc-900 w-full" id="brands">
       <div class="container mx-auto">
-          <div class="brands-holder">
+          <div class="brands-holder px-6 md:px-0">
               <ul class="list-none flex justify-between items-center">
                   <li v-for="item in brandsData">
                     <a :href="item.address"                      :title="item.title" 
