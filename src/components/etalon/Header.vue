@@ -2,7 +2,7 @@
     
     <header class="top-0">
         <div class="container mx-auto">
-            <div class="hidden md:flex justify-between pt-6 items-center relative text-white z-50">
+            <div class="foo">
                 <div class="font-black text-4xl">
                     <router-link :to="{
                             name : 'home',
@@ -41,6 +41,7 @@
     </header>
 </template>
 <script>
+
 import { mapStores } from 'pinia'
 import { useCounterStore } from '@/stores/counter.js';
     export default{
@@ -86,6 +87,12 @@ import { useCounterStore } from '@/stores/counter.js';
     }
 </script>
 <style scoped>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.foo {
+    @apply hidden md:flex justify-between pt-6 items-center relative text-white z-50;
+}
 .shopping-cart-indicator{
     top: 25px;
     right:-15px;

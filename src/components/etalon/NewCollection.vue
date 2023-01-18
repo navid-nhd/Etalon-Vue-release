@@ -14,7 +14,7 @@
                           <img class="left-showcase-picture block absolute bottom-0 left-1/2" src="src/image/2.png" alt="Jacket" >
                       </div>
                       <div class="left-showcase-btn absolute cursor-pointer">
-                          <router-link to="/" class="btn inline-block text-white bg-zinc-900 hover:bg-zinc-700">Discover Now</router-link>
+                          <router-link to="/" class="btn inline-block text-white bg-zinc-900 hover:bg-zinc-700 hover:text-white">Discover Now</router-link>
                       </div>
                   </div>
               </div>

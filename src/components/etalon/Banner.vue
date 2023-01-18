@@ -25,12 +25,12 @@
                             <div class="arrow-holder hidden lg:flex flex-row  flex-nowrap absolute gap-2">
                                 <div class="right-arrow">
                                         <router-link to="/" title="next">
-                                            <img src="src/image/arrow-small-left.svg" alt="arrow" class="block">
+                                            <img src="@/image/arrow-small-left.svg" alt="arrow" class="block">
                                         </router-link>
                                 </div>
                                 <div class="left-arrow">
                                     <router-link to="/" title="next">
-                                        <img src="src/image/arrow-small-left.svg" alt="arrow" class="block">
+                                        <img src="@/image/arrow-small-left.svg" alt="arrow" class="block">
                                     </router-link>
                                 </div>
                             </div>
