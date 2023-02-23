@@ -13,7 +13,15 @@
                             Autumn Sale / Up to 50% OFF
                         </div>
                         <div class="pt-4 lg:pt-12 text-zinc-900">
-                            <router-link to="/" class="btn bg-amber-300  hover:bg-amber-100 inline-block" title="Open Collection" target="_blank">Open Collection</router-link>
+                            <router-link :to="{
+                                name: 'product-id',
+                                params: {
+                                    id: 1234,
+                                },
+                                query: {
+                                    message: 'Hello World!',
+                                }
+                            }" class="btn bg-amber-300  hover:bg-amber-100 inline-block" title="Open Collection" target="_self">Open Collection</router-link>
                         </div>
                     </div>
                     <div class="w-full lg:w-1/2">
