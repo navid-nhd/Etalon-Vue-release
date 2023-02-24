@@ -14,28 +14,8 @@
                 </div>
                 <div class="best-sellers-holder">
                     <ul class="sellers-list flex lg:flex-nowrap overflow-x-scroll pb-9">
-                        <li v-for="item in bestSellersInfo" class="sellers-item flex-shrink-0 md:w-1/4 flex flex-wrap">
-                            <div class="sellers-image-holder w-full flex justify-center items-center relative rounded-3xl bg-white g-0">
-                                <img :src="`src/image/${item.url}`" alt="Backpack" class="seller-image w-full">
-                                <button title="Add to Favorite" @click="changeStatus()" class="favorite-icon-link block absolute">
-                                     <img :src="`src/image/${src}`" alt="favorite"  class="fav-icon-white">
-                                </button>    
-                            </div>
-                            <div class="sellers-details w-full flex justify-between items-center pt-4">
-                                <div class="sellers-name-price">
-                                    <div class="sellers-name font-medium capitalize">
-                                        {{ item.name }}
-                                    </div>
-                                    <div class="sellers-price font-light capitalize opacity-60">
-                                        {{ item.price }}
-                                    </div>
-                                </div>
-                                <button @click="counterStore.increment()"  class="sellers-buying-link flex justify-center items-center rounded-md 2xl:mr-9">
-                                    <router-link to="/" title="Go to Shop">
-                                        <img src="src/image/shopping-cart.svg">
-                                    </router-link>
-                                </button>
-                            </div>
+                        <li v-for="item in bestSellersInfo"  class="sellers-item flex-shrink-0 md:w-1/4 flex flex-wrap">
+                            <SellersItem :title="item"></SellersItem>
                         </li>
                     </ul>
                 </div>
@@ -46,6 +26,8 @@
         </section>
 </template>
 <script>
+import SellersItem from '@/components/etalon/SellersItem.vue'
+
 import { mapStores,mapActions } from 'pinia';
 import { useCounterStore } from '@/stores/counter';
     export default{ 
@@ -59,7 +41,7 @@ import { useCounterStore } from '@/stores/counter';
             ...mapStores(useCounterStore)
         },
         components: {
-
+            SellersItem,
         },
         data() {
             return{
@@ -105,56 +87,12 @@ import { useCounterStore } from '@/stores/counter';
     width: 250px;
     padding: 17.5px;
 }
-.sellers-image-holder {
-    width: 227px;
-    height: 220px;
-}
-.seller-image {
-    width: 132px;
-    height: 148px;
-}
-.favorite-icon-link {
-    width: 24px;
-    height: 21px;
-    top: 18px;
-    right: 16px;
-}
-.fav-icon-white {
-    display: block;
+
+.sellers-btn {
+    padding: 35px 0 70px;
 }
 .fav-icon-black {
     display: none;
-}
-.sellers-image-holder a:hover img.fav-icon-white{
-    display: none;
-}
-.sellers-image-holder a:hover img.fav-icon-black{
-    display: block;
-}
-.sellers-name {
-    font-family: var(--etalon-font-secondry);
-    font-size: 16px;
-    line-height: 19px;
-}
-.sellers-price {
-    font-family: var(--etalon-font-secondry);
-    font-size: 14px;
-    line-height: 16px;
-}
-.sellers-buying-link {
-    background-color: var(--etalon-yellow);
-    width: 30px;
-    height: 30px;
-}
-.sellers-buying-link > a{ 
-    display: block;
-    padding: 7px;
-}
-.sellers-buying-link > a:hover{ 
-    background-color: var(--etalon-yellow-hover);
-}
-.sellers-btn {
-    padding: 35px 0 70px;
 }
 @media  screen and (min-width : 992px) {
     .sellers-item {
@@ -170,41 +108,12 @@ import { useCounterStore } from '@/stores/counter';
         overflow: clip;
         justify-content: space-between;
     }
-    .sellers-image-holder {
-        width: 250px;
-        height: 260px;
-        flex-shrink: 1;
-    }
-    .sellers-name {
-        font-size: 18px;
-        line-height: 21px;
-    }
-    .sellers-price {
-        font-size: 16px;
-        line-height: 19px;
-    }
-    .sellers-buying-link {
-        width: 40px;
-        height: 40px;
-    }
-    .sellers-buying-link > a{ 
-        padding: 11px;
-    }
+    
     .nav-shopping-cart {
     margin-top: 70px;
     }
 }
-@media  screen and (min-width : 1200px) { 
-    .sellers-image-holder {
-        width: 303px;
-        height: 347px;
-    }
-    .seller-image {
-        width: 214px;
-        height: 238px;
-    }
-   
-}
+
 .shopping-cart-indicator{
     top: 25px;
     right:0px;
